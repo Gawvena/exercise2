@@ -26,6 +26,10 @@ class MainActivity : ComponentActivity() {
             GrettingCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
+                            name = "Kauser",
+                            modifier = Modifier.padding(innerPadding)
+                    )
+                    Greeting(
                             name = "Luke",
                             modifier = Modifier.padding(innerPadding)
                     )
