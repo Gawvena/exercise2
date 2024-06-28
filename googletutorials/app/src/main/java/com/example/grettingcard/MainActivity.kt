@@ -25,8 +25,24 @@ class MainActivity : ComponentActivity() {
         setContent {
             GrettingCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    Greeting3(
                             name = "Lucian",
+                            modifier = Modifier.padding(innerPadding)
+                    )
+                    Greeting(
+                            name = "Jacob",
+                            modifier = Modifier.padding(innerPadding)
+                    )
+                    Greeting(
+                            name = "Ben",
+                            modifier = Modifier.padding(innerPadding)
+                    )
+                    Greeting(
+                            name = "Kauser",
+                            modifier = Modifier.padding(innerPadding)
+                    )
+                    Greeting2(
+                            name = "Luke",
                             modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -37,6 +53,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Surface(color = Color.Cyan) {
+        Text(
+            text = "Hello, $name!",
+            modifier = modifier.padding(24.dp)
+        )
+    }
+}
+
+@Composable
+fun Greeting2(name: String, modifier: Modifier = Modifier) {
+    Surface(color = Color.Red) {
+        Text(
+            text = "What's Up? $name!",
+            modifier = modifier.padding(24.dp)
+        )
+    }
+}
+
+@Composable
+fun Greeting3(name: String, modifier: Modifier = Modifier) {
     Surface(color = Color.LightGray) {
         Text(
             text = "Good morning, $name!",
@@ -44,11 +80,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         )
     }
 }
-
+          
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     GrettingCardTheme {
-        Greeting("Lucian")
+        Greeting("Luke")
     }
 }
